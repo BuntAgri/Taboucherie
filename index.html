@@ -1,78 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.E. BATIMENT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TA BOUCHERIE – Boucherie & Charcuterie</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #111827; line-height: 1.6; }
-    header, footer { background: #1f2937; color: white; text-align: center; padding: 30px; }
-    nav a { color: #fbbf24; margin: 0 12px; text-decoration: none; font-weight: 600; }
-    section { padding: 60px 20px; max-width: 1200px; margin: auto; text-align: center; }
-    h2 { color: #1f2937; margin-bottom: 20px; font-size: 2.4em; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .gallery img { width: 100%; border-radius: 8px; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;
+    :root{
+      --primary:#7a0c0c;
+      --dark:#161616;
+      --text:#333;
+      --bg:#f6f6f6;
+      --card:#ffffff;
     }
-    iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; margin-top: 20px; }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
+      color:var(--text); background:var(--bg);
+    }
+    header{
+      background:linear-gradient(135deg,#8d1010, #5c0a0a);
+      color:#fff; text-align:center; padding:48px 16px;
+    }
+    header h1{margin:0 0 8px; font-size:38px; letter-spacing:.5px}
+    header p{margin:6px 0; opacity:.95}
+    .container{max-width:1100px; margin:0 auto; padding:24px 16px}
+    .section{
+      background:var(--card); border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.05);
+      display:flex; gap:28px; padding:22px; margin:22px 0;
+      align-items:center;
+    }
+    .section:nth-child(odd){ flex-direction:row-reverse }
+    .image{
+      flex:1 1 48%;
+      overflow:hidden; border-radius:12px;
+    }
+    .image img{
+      width:100%; height:100%; max-height:360px; object-fit:cover; display:block;
+      transform:scale(1.02); transition:transform .35s ease;
+    }
+    .image:hover img{ transform:scale(1.06) }
+    .content{ flex:1 1 52% }
+    h2{ color:var(--primary); margin:0 0 8px; font-size:26px }
+    p{ line-height:1.65; margin:0; }
+    .badge{
+      display:inline-block; background:#ffe9e9; color:var(--primary);
+      padding:6px 10px; border-radius:30px; font-size:12px; margin-bottom:10px;
+      letter-spacing:.3px;
+    }
+    .grid-contacts{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:14px;
+    }
+    .card{
+      background:var(--card); border-radius:12px; padding:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+    }
+    a{ color:var(--primary); text-decoration:none }
+    a:hover{ text-decoration:underline }
+    footer{
+      background:var(--dark); color:#d8d8d8; text-align:center; padding:22px 14px; margin-top:10px;
+      font-size:14px;
+    }
+    @media (max-width:900px){
+      .section{flex-direction:column !important}
+      .image{width:100%}
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>V.E. BATIMENT</h1>
-  <nav>
-    <a href="#about">Présentation</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-    <a href="#map">Adresse</a>
-  </nav>
+  <h1>TA BOUCHERIE</h1>
+  <p>Viandes fraîches, charcuteries maison & plats préparés</p>
+  <p>📍 41 Rue Jacquemart, 26100 Romans-sur-Isère, France</p>
+  <p>✉️ <a href="mailto:contact@tboucherie.shop" style="color:#fff">contact@tboucherie.shop</a> | 📞 +33 6 73 94 51 93</p>
 </header>
 
-<section id="about">
-  <h2>Présentation</h2>
-  <p>Basée à Les Mureaux, V.E. BATIMENT est une entreprise spécialisée dans la maçonnerie générale et les gros travaux de construction. Grâce à une équipe qualifiée, nous réalisons des chantiers sur mesure en respectant les normes de qualité et de sécurité.</p>
-</section>
+<main class="container">
 
-<section id="services">
-  <h2>Nos Services</h2>
-  <p>Gros œuvre de bâtiment, travaux de maçonnerie, fondations, rénovation structurelle, et accompagnement personnalisé pour tous vos projets de construction.</p>
-</section>
+  <!-- 1. Sélection du Boucher -->
+  <section class="section">
+    <div class="image">
+      <img src="https://avatars.mds.yandex.net/i?id=01547176ba75cf93e28d5aa458500d02e97845c8-9233745-images-thumbs&n=13" alt="Sélection du boucher">
+    </div>
+    <div class="content">
+      <span class="badge">Qualité & Traçabilité</span>
+      <h2>Sélection du Boucher</h2>
+      <p>
+        Nous sélectionnons des pièces de viande issues d’élevages responsables. Maturation maîtrisée,
+        découpe précise et conseils de cuisson : tout est mis en œuvre pour vous garantir saveur et tendreté.
+      </p>
+    </div>
+  </section>
 
-<section id="gallery">
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1570126681032-3a7c41f13b0d?auto=format&fit=crop&w=800&q=80" alt="chantier 1">
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="chantier 2">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="chantier 3">
-  </div>
-</section>
+  <!-- 2. Charcuterie Maison -->
+  <section class="section">
+    <div class="image">
+      <img src="https://avatars.mds.yandex.net/i?id=291cd22e6287c1c35131e063c3cd0bc2b9fc2350-12935730-images-thumbs&n=13" alt="Charcuterie maison">
+    </div>
+    <div class="content">
+      <span class="badge">Fait Maison</span>
+      <h2>Charcuterie Maison</h2>
+      <p>
+        Pâtés, terrines, jambons et saucissons élaborés sur place selon des recettes authentiques.
+        Des produits généreux, sans compromis sur le goût.
+      </p>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <p>Email : contact@vebatiment.shop</p>
-  <p>Téléphone : +33 6 05 99 64 90</p>
-  <form class="contact-form">
-    <input type="text" placeholder="Nom">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Votre message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+  <!-- 3. Plats Traiteur -->
+  <section class="section">
+    <div class="image">
+      <img src="https://avatars.mds.yandex.net/i?id=57a1c79150111e066a4a619af91ff736ffa36297-4210399-images-thumbs&n=13" alt="Plats traiteur">
+    </div>
+    <div class="content">
+      <span class="badge">À Emporter</span>
+      <h2>Plats Traiteur</h2>
+      <p>
+        Lasagnes, rôtis farcis, gratins et spécialités régionales prêts à réchauffer. Idéals pour vos repas
+        du quotidien ou vos occasions spéciales.
+      </p>
+    </div>
+  </section>
 
-<section id="map">
-  <h2>Adresse</h2>
-  <p>66 Avenue du Maréchal Foch, 78130 Les Mureaux, France</p>
-  <iframe src="https://www.google.com/maps?q=66+Avenue+du+Mar%C3%A9chal+Foch,+Les+Mureaux,+France&output=embed" allowfullscreen loading="lazy"></iframe>
-</section>
+  <!-- 4. Conseils & Cuissons (réutilisation image 1) -->
+  <section class="section">
+    <div class="image">
+      <img src="https://avatars.mds.yandex.net/i?id=01547176ba75cf93e28d5aa458500d02e97845c8-9233745-images-thumbs&n=13" alt="Conseils cuisson">
+    </div>
+    <div class="content">
+      <span class="badge">Conseils du Chef</span>
+      <h2>Conseils & Cuissons</h2>
+      <p>
+        Selon la pièce choisie, nous vous indiquons la meilleure cuisson (bleu, saignant, à point) et l’assaisonnement
+        qui sublime la viande. Réussissez vos grillades et mijotés à tous les coups.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Contact & Horaires (réutilisation image 2) -->
+  <section class="section">
+    <div class="image">
+      <img src="https://avatars.mds.yandex.net/i?id=291cd22e6287c1c35131e063c3cd0bc2b9fc2350-12935730-images-thumbs&n=13" alt="Contact">
+    </div>
+    <div class="content">
+      <span class="badge">Nous Contacter</span>
+      <h2>Contact & Horaires</h2>
+      <p>
+        Passez commande par téléphone ou par e-mail. Nous préparons vos pièces à l’avance pour un retrait express.
+      </p>
+      <div class="grid-contacts">
+        <div class="card">
+          <strong>Adresse</strong><br/>
+          41 Rue Jacquemart, 26100 Romans-sur-Isère
+        </div>
+        <div class="card">
+          <strong>Contact</strong><br/>
+          ✉️ <a href="mailto:contact@tboucherie.shop">contact@tboucherie.shop</a><br/>
+          📞 +33 6 73 94 51 93
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  &copy; 2025 V.E. BATIMENT — Tous droits réservés
+  © 2025 TA BOUCHERIE — Tous droits réservés
 </footer>
 
 </body>
